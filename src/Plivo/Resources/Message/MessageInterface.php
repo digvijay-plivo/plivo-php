@@ -180,7 +180,8 @@ class MessageInterface extends ResourceInterface
                 $responseContents['message'],
                 $responseContents['message_uuid'],
                 $responseContents['api_id'],
-                $response->getStatusCode()
+                $response->getStatusCode(),
+                $responseContents['invalid_number'] 
             );
         } else {
             throw new PlivoResponseException(
@@ -189,7 +190,6 @@ class MessageInterface extends ResourceInterface
                 null,
                 $response->getContent(),
                 $response->getStatusCode()
-
             );
         }
     }

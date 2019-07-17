@@ -25,15 +25,18 @@ class ResponseUpdate
      */
     public $statusCode;
 
+    public $invalid_number;
+
     /**
      * ResponseUpdate constructor.
      * @param $message
      */
-    public function __construct($apiId, $message,$statusCode = 200)
+    public function __construct($apiId, $message,$statusCode = 200, $invalid_number)
     {
         $this->_message = $message;
         $this->apiId = $apiId;
         $this->statusCode = $statusCode;
+        $this->invalid_number = $invalid_number;
     }
 
     /**
@@ -72,5 +75,10 @@ class ResponseUpdate
     public function getStatusCode()
     {
         return $this->statusCode;
+    }
+
+    public function getContent()
+    {
+        return $this->invalid_number;
     }
 }
